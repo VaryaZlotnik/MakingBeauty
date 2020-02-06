@@ -1,0 +1,33 @@
+from kivy.app import App
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.button import Button
+from kivy.config import Config
+
+class MyApp(App):
+    pass
+    def build(self):
+        Config.set("graphics", "width", 300)
+        Config.set("graphics", "height", 300)
+        Config.set("graphics", "resizable", 0)
+        #return Button(text="Это кнопка", on_press=self.callback_press, on_release=self.callback_release)
+        self.knopka = Button()
+        gl = GridLayout(cols=3)
+        gl.add_widget(self.knopka)
+        gl.add_widget(Button(on_press=self.callback_press, on_release=self.callback_release))
+        gl.add_widget(Button(on_press=self.callback_press, on_release=self.callback_release))
+        gl.add_widget(Button(on_press=self.callback_press, on_release=self.callback_release))
+        gl.add_widget(Button(on_press=self.callback_press, on_release=self.callback_release))
+        gl.add_widget(Button(on_press=self.callback_press, on_release=self.callback_release))
+        gl.add_widget(Button(on_press=self.callback_press, on_release=self.callback_release))
+        gl.add_widget(Button(on_press=self.callback_press, on_release=self.callback_release))       
+        gl.add_widget(Button(on_press=self.callback_press, on_release=self.callback_release))
+        return gl
+    def callback_press(self, instance):
+        instance.text = 'Tap'
+    def callback_release(self, instance):
+        instance.text = 'Well done!'
+
+if __name__ == '__main__':
+    MyApp().run()
+
+
