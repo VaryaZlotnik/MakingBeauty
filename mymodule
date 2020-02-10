@@ -1,0 +1,9 @@
+def hi(name):
+    print('Hello, ' + name + '!')
+    
+def question():
+    print('What are you doing now?')
+
+if __name__ == '__main__':
+    hi('Varya')
+    print('What are you doing now?')
